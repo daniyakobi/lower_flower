@@ -1,0 +1,103 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.home_socials {
+  position: relative;
+  padding: 200px 0;
+  overflow: hidden;
+  & .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &_text {
+      position: absolute;
+      z-index: 0;
+      top: -20px;
+      left: -180px;
+      font-weight: 700;
+      font-size: 200px;
+      line-height: 296px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $dark-green-70;
+    }
+    &_item {
+      position: relative;
+      z-index: 1;
+      width: 160px;
+      height: 160px;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+  &__block {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    &_text {
+      width: 350px;
+      position: relative;
+      margin-bottom: 60px;
+      & svg {
+        position: relative;
+        top: -31px;
+      }
+      & div {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: $green;
+        left: 0;
+        top: 57px;
+      }
+    }
+    &_buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      & a {
+        &:hover {
+          & svg path {
+            fill: $pink;
+          }
+        }
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  &__green {
+    &_first {
+      position: absolute;
+      z-index: 0;
+      width: 100px;
+      height: 211px;
+      left: -20px;
+      bottom: 45px;
+    } 
+    &_second {
+      position: absolute;
+      z-index: 0;
+      width: 880px;
+      height: 211px;
+      right: 355px;
+      bottom: 100px
+    }
+  }
+  &__purple {
+    position: absolute;
+    z-index: 0;
+    width: 354px;
+    height: 364px;
+    right: 125px;
+    bottom: 135px;
+  }
+}

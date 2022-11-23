@@ -1,0 +1,36 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $white;
+      & svg {
+        margin-right: 10px;
+      }
+    }
+    &:hover {
+      & a {
+        color: $green;
+        text-decoration: underline;
+        & svg path {
+          fill: $green;
+        }
+      }
+    }
+  }
+}

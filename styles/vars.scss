@@ -1,0 +1,25 @@
+@import '../fonts/Cormorant/cormorant.scss';
+@import '../fonts/Oswald/oswald.scss';
+
+// Colors
+$dark: #040A0A;
+$green: #43FFD2;
+$purple: #7D2253;
+$pink: #D978AC;
+$white: #FFFFFF;
+$blur: rgba(0, 0, 0, 0.2);
+$before: #0A1717;
+$dark-green: #0F2222;
+$dark-green-30: #0F222230;
+$dark-green-70: #0F222270;
+$placeholder: #395959;
+
+$gradient: linear-gradient(180deg, rgba(4, 10, 10, 0) 0%, $dark 100%);
+
+// Fonts
+$main: 'Oswald', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$title: 'Cormorant', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+// Transitions 
+$tr3: all .3s linear;
+$tr5: all .5s linear;

@@ -1,0 +1,115 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  &__title {
+    &_top, &_bottom {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translate3d(0, calc(var(--scrollTop) / 4.5), 0);
+      font-family: $title;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 200px;
+      line-height: 242px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: $white;
+    }
+    &_top {
+      top: 93px;
+      z-index: 1;
+    }
+    &_bottom {
+      top: calc(93px + 153px);
+      z-index: 3;
+    }
+  }
+  &__subtitle, &__link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translate3d(0, calc(var(--scrollTop) / 4.5), 0);
+    z-index: 5;
+  }
+  &__subtitle {    
+    top: 488px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $white;
+  }
+  &__link {
+    top: 565px;
+    @include Button(220px, 50px, $dark, $green, $white, $purple);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 150;
+  }
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 1244px;
+    &_after {
+      position: absolute;
+      width: 100%;
+      height: 975px;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+    &_before {
+      position: absolute;
+      width: 100%;
+      height: 975px;
+      left: 0;
+      bottom: calc(1244px - 975px);
+      z-index: 4;
+    }
+    &_center {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      &_gradient {
+        position: absolute;
+        width: 100%;
+        height: 406px;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+        background: $gradient;
+      }
+    }
+  }
+  &__green {
+    position: absolute;
+    // transform: translate3d(0, calc((var(--scrollTop) / 3.5) * -1), 0);
+    left: -33px;
+    top: 207px;
+    width: 360px;
+    height: 295px;
+    z-index: 5;
+  }
+  &__purple {
+    position: absolute;
+    // transform: translate3d(0, calc((var(--scrollTop) / 3.5) * -1), 0);
+    right: 130px;
+    top: 29px;
+    width: 472px;
+    height: 211px;
+    z-index: 5;
+  }
+  &__name {
+    position: absolute;
+    bottom: 7px;
+    right: 200px;
+    z-index: 5;
+  }
+}

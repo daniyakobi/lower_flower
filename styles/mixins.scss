@@ -1,0 +1,18 @@
+@mixin Button($width, $height, $color, $background, $color-hover, $background-hover) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $width;
+  height: $height;
+  color: $color;
+  background: $background;
+  &:hover {
+    color: $color-hover;
+    background: $background-hover;
+    & svg {
+      & path {
+        fill: $color-hover;
+      }
+    }
+  }
+}

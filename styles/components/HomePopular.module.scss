@@ -1,0 +1,161 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.home_popular {
+  position: relative;
+  min-height: 120vh;
+  padding: 100px 0;
+  & .container {
+
+  }
+  &__title {
+    font-weight: 400;
+    margin-bottom: 10px;
+    & div {
+      &:nth-child(2) {
+        margin-left: calc(545px - 165px);
+      }
+    }
+  }
+  &__text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 86px;
+    & p {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.04em;
+      color: $white;
+    }
+  }
+  &__list {
+    margin-bottom: 60px;
+    &_card {
+      position: relative;
+      color: $white;
+      &_tag {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background: $pink;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+        color: $dark;
+      }
+      & img {
+        margin-bottom: 10px;
+      }
+      &_title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 10px;
+        &:hover {
+          color: $green;
+        }
+      }
+      &_price {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $white;        
+        margin-bottom: 20px;
+      }
+      & button {
+        @include Button(220px, 50px, $white, transparent, $dark, $green);
+        border: 0.5px solid $white;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $white;
+        &:hover {
+          border-color: $green;
+        }
+      }
+    }
+    &_track {
+
+    }
+    &_arrows {
+      & button {
+        background: transparent;
+        width: 80px;
+        height: 10px;
+        & svg {
+          width: 80px;
+          height: auto;
+        }
+        &:hover {
+          & svg path {
+            fill: $pink;
+          }
+        }
+        &:nth-child(1) {
+          left: -110px;
+        }
+        &:nth-child(2) {
+          right: -110px;
+        }
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: $pink;
+    & svg {
+      margin-left: 6px;
+    }
+    &:hover {
+      color: $green;
+      & svg {
+        margin-left: 15px;
+        & path {
+          fill: $green;
+        }
+      }
+    }
+  }
+  &__purple {
+    position: absolute;
+    width: 571px;
+    height: 366px;
+    top: 420px;
+    left: 274px;
+    // transform: translate3d(0, calc((var(--scrollTop) / 2.5) * -1), 0);
+    z-index: 1;
+  }
+  &__green {
+    position: absolute;
+    width: 811px;
+    height: 662px;
+    top: 250px;
+    left: -12px;
+    // transform: translate3d(0, calc((var(--scrollTop) / 2.5) * -1), 0);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,114 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.home_offer {
+  position: relative;
+  min-height: 120vh;
+  padding: 100px 0;
+  & .container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__title {
+    max-width: 775px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 30px;
+    & div {
+      font-weight: 400;
+      font-size: 100px;
+      line-height: 121px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $white;
+      &:nth-child(2) {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+    &_line {
+      position: absolute;
+      left: calc(260px - 165px);
+      bottom: 58px;
+      width: 255px;
+      height: 1px;
+      background-color: $pink;
+    }
+  }
+  &__image {
+    position: relative;
+    width: 255px;
+    height: 292px;
+    border-radius: 20px;
+    overflow: hidden;
+    &_first {
+      height: 242px;
+    }
+    &_third {
+      width: 163px;
+    }
+  }
+  &__text {
+    position: relative;
+    width: calc(260px - 165px + 255px);
+    padding-left: calc(260px - 165px);
+    & p, & ul li {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $white;
+    }
+    & p {
+      margin-bottom: 40px;
+    }
+    & ul {
+      margin-bottom: 40px;
+      & li {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 11px;
+          transform: translateY(-50%);
+          left: -12px;
+          border-radius: 50%;
+          width: 4px;
+          height: 4px;
+          background: $white;
+        }
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &_arrow {
+      position: absolute;
+      left: calc(260px - 165px - 30px);
+      bottom: 28px;
+    }
+    &_link {
+      @include Button(255px, 50px, $dark, $green, $white, $purple);
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+  &__purple {
+    position: absolute;
+    width: 654px;
+    height: 664px;
+    right: -292px;
+    top: 35%;
+    transform: translateY(-50%);
+  }
+}

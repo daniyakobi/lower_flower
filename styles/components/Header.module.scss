@@ -1,0 +1,249 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.header {
+  &__default {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: $dark;
+    animation: headerDefault .5s linear;
+  }
+  &__full {
+    position: absolute;
+    width: 100%;
+    // height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    animation: headerFull .5s linear;
+  }
+  & .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    &_block {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 27px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+    &_block {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      & a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $green;
+        &:hover {
+          color: $pink;
+        }
+      }
+      & p {
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $white;
+      }
+      &:nth-child(2) {
+        margin-top: 26px;
+        margin-bottom: 60px;
+      }
+    }
+    &_socials {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 0;
+      margin-bottom: auto;
+      background: $blur;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 20px;
+      & a {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        &:hover {
+          & svg path {
+            fill: $pink;
+          }
+        }
+      }
+    }
+    &_scroll {
+      min-height: initial;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 0;
+      & .header__right {
+        &_block, &_socials, &_phone button {
+          display: none;
+        }
+        &_phone {
+          margin-bottom: 7px;
+        }
+        &_cart {
+          margin-left: 20px;
+          &:hover {
+            background: $blur;
+            & svg {
+              & path {
+                fill: $green;
+              }
+            }
+            & div {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+    &_cart {
+      position: relative;
+      padding: 15px;
+      background: $blur;
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      cursor: pointer;
+      & div {
+        position: absolute;
+        right: 8px;
+        top: 13px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $dark;
+        z-index: 1;
+      }
+      &:hover {
+        background: $green;
+        & svg {
+          & path {
+            fill: $dark;
+          }
+        }
+        & div {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+    &_phone {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      margin-bottom: 35px;
+      & a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $green;
+        &:hover {
+          color: $pink;
+        }
+      }
+      & button {
+        margin-top: 7px;
+        @include Button(180px, 40px, $green, $blur, $dark, $green);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        & svg {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  &__logo {
+    margin-right: 69px;
+  }
+  &__menu {
+    opacity: 1;
+    visibility: visible;
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    animation: headerMenu 1s linear;
+  }
+}
+
+@keyframes headerDefault {
+  0% {
+    height: 100%;
+    background: transparent;
+  }
+  30% {
+    height: 0;
+    background: transparent;
+  }
+  100% {
+    height: 80px;
+    background: $dark;
+  }
+}
+@keyframes headerFull {
+  0% {
+    height: 80px;
+    background: $dark;
+  }
+  30% {
+    height: 0;
+    background: transparent;
+  }
+  100% {
+    height: 100%;
+    background: transparent;    
+  }
+}
+@keyframes headerMenu {
+  0% {
+    visibility: hidden;
+    opacity: 1;
+  }
+  70% {
+    visibility: hidden;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

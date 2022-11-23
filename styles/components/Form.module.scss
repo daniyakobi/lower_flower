@@ -1,0 +1,58 @@
+@import '../vars.scss';
+@import '../mixins.scss';
+
+.form {
+  width: 100%;
+  &__group {
+    width: 100%;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 60px;
+  }
+  &__textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+  }
+  &__input, &__textarea {
+    padding: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: transparent;
+    color: $white;
+    &::placeholder {
+      color: $placeholder;
+    }
+  }
+  &__button {
+    @include Button(255px, 50px, $dark, $green, $white, $pink);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &__text {
+    width: 340px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    & a {
+      color: $pink;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
